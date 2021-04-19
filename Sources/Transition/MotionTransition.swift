@@ -238,7 +238,7 @@ open class MotionTransition: NSObject {
   internal var defaultAnimation = MotionTransitionAnimationType.auto
   
   /// The color of the transitioning container.
-  internal var containerBackgroundColor = UIColor.black
+  internal var containerBackgroundColor = UIColor.clear
   
   /// A boolean indicating if the user may interact with the
   /// view controller while in transition.
