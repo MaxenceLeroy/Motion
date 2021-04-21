@@ -87,7 +87,7 @@ fileprivate extension MotionTransition {
   
   /// Prepares the snapshot view, which hides any flashing that may occur.
   func prepareSnapshotView() {
-    fullScreenSnapshot = transitionContainer?.window?.snapshotView(afterScreenUpdates: false) ?? fromView?.snapshotView(afterScreenUpdates: false)
+    // fullScreenSnapshot = transitionContainer?.window?.snapshotView(afterScreenUpdates: false) ?? fromView?.snapshotView(afterScreenUpdates: false)
     
     if let v = fullScreenSnapshot {
       (transitionContainer?.window ?? transitionContainer)?.addSubview(v)

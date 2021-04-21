@@ -49,22 +49,29 @@ extension MotionTransition {
     var t: TimeInterval = 0
     var animatorWantsInteractive = false
     
+    let snapShotType: MotionSnapshotType
+    if toViewController is UINavigationController {
+      snapShotType = .optimized
+    } else {
+      snapShotType = .noSnapshot
+    }
+    
     if context.insertToViewFirst {
       for v in animatingToViews {
-        context.snapshotView(for: v)
+        context.snapshotView(for: v, defaultSnapshotType: snapShotType)
       }
       
       for v in animatingFromViews {
-        context.snapshotView(for: v)
+        context.snapshotView(for: v, defaultSnapshotType: snapShotType)
       }
       
     } else {
       for v in animatingFromViews {
-        context.snapshotView(for: v)
+        context.snapshotView(for: v, defaultSnapshotType: snapShotType)
       }
       
       for v in animatingToViews {
-        context.snapshotView(for: v)
+        context.snapshotView(for: v, defaultSnapshotType: snapShotType)
       }
     }
     

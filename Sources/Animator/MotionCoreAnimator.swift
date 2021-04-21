@@ -189,7 +189,7 @@ internal class MotionCoreAnimator<T: MotionAnimatorViewContext>: MotionAnimator 
    - Returns: A snapshot UIView.
    */
   func snapshotView(for view: UIView) -> UIView {
-    return context.snapshotView(for: view)
+    return context.snapshotView(for: view, defaultSnapshotType: .noSnapshot)
   }
 }
 

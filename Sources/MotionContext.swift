@@ -171,7 +171,7 @@ public extension MotionContext {
    - Returns: A UIView.
    */
   @discardableResult
-  func snapshotView(for view: UIView) -> UIView {
+  func snapshotView(for view: UIView, defaultSnapshotType: MotionSnapshotType) -> UIView {
     if let snapshot = viewToSnapshot[view] {
       return snapshot
     }
@@ -208,7 +208,7 @@ public extension MotionContext {
     view.alpha = 1
     
     let snapshot: UIView
-    let snapshotType = self[view]?.snapshotType ?? MotionSnapshotType.optimized
+    let snapshotType = self[view]?.snapshotType ?? defaultSnapshotType
     
     switch snapshotType {
     case .normal:
